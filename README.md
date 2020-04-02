@@ -1,3 +1,33 @@
+## Overview
+
+const users = [
+    { name: "Suresh", title: "CEO", id: 1},
+    { name: "VP2", title: "VP", id: 3, manager_id: "1"},
+    { name: "SrDr1", title: "Sr Dir", id: 4, manager_id: "2"},
+    { name: "SrDr2", title: "Sr Dir", id: 5, manager_id: "3"},
+    { name: "Dir1", title: "Dir", id: 6, manager_id: "5"},
+    { name: "VP1", title: "VP", id: 2, manager_id: "1"}
+]
+
+display in below format
+
+Suresh
+VP2
+VP1
+SrDr1
+SrDr2
+Dir1
+
+main logic is 
+.sort((user1, user2) => parseInt(user1.manager_id) - parseInt(user2.manager_id))
+and [...new Set(sortedMap.map(r => r.manager_id))]
+
+and print items for each item in that Set
+
+
+--------------
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
